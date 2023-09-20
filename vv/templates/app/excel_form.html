@@ -1,0 +1,55 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#  <title>Excel Form</title>#}
+{#</head>#}
+{#<body>#}
+{#  <h1>Enter Enrolment number</h1>#}
+{#  <form method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button type="submit">Submit</button>#}
+{#  </form>#}
+{#</body>#}
+{#</html>#}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excel Form</title>
+<style>
+  div{
+  text-align: center;
+  padding:100px;
+  <!--box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); -->
+  }
+  .indiv1{
+  width:25%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left:200px;
+  }
+  .botton{
+   padding: 15px 32px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   border-radius:7px;
+   border:none;
+   background-color:gray;
+   color:white;
+   }
+</style>
+</head>
+<body>
+<div>
+<div class="indiv1">
+  <h2>Enter Enrolment number</h2>
+  <br>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="botton" type="submit">Submit</button>
+  </form>
+  </div>
+ </div>
+</body>
+</html>

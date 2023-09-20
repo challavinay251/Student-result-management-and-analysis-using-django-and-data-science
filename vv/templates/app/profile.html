@@ -1,0 +1,70 @@
+{% extends "app/base.html" %}
+{% block body_block %}
+<style>
+.profile{
+    text-align: center;
+    {#border:1px Solid Maroon;#}
+    float:right;
+    width:40%;
+    height:330px;
+    /*margin:1px;*/
+    margin-top: 5px;
+    box-shadow:0px 8px 10px #d3d3d3;
+    padding-top: 50px;
+}
+.profile1{
+    text-align: center;
+    {#border:1px Solid Maroon;#}
+    float:left;
+    width:20%;
+    height:330px;
+    margin-top:10px;
+    box-shadow:0px 8px 10px #d3d3d3;
+    padding-top: 50px;
+    margin-left: 80px;
+}
+
+img{
+   /* border:1px dotted blue;*/
+    width:60%;
+    height:150px;
+    margin:1px;
+    box-shadow:0px 8px 10px #d3d3d3;
+    border-radius:50%;
+}
+
+a:link{
+text-decoration:none;
+}
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 1px;
+  border-radius:7px;
+  width:90%;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: gray;
+  color: white;
+}
+
+</style>
+
+{% csrf_token %}
+<div class="profile">
+<img src="/static/images/profile.png" alt="profile.png" /><br/>
+    <h3>NAME : {{ user.username }}</h3></br>
+    <h3>EMAIL: {{ user.email }}</h3>
+</div>
+    <span><h3>CHECK HERE FOR RESULT:</h3></span>
+<div class="profile1">
+	     <a href="/result/">RESULT</a></br></br>
+        <a href="/respones/">RESPONES_sheet</a></br></br>
+        <a href="/marksheet/">MARKS_sheet</a></br></br>
+        <a href="/analysis-results/">ANALYSIS</a></br></br>
+</div>
+{% endblock %}

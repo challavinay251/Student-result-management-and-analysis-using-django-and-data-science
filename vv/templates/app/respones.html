@@ -1,0 +1,320 @@
+
+<html>
+<head>
+	<style>
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+div{
+     padding-left:10px;
+}
+h2{
+color: white;
+    text-align: center;
+	font-type :  bolder ;
+	}
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 1px;
+  border-radius:7px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: gray;
+  color: white;
+}
+
+
+</style>
+
+</head>
+<body>
+{% block content %}
+    <h1>student respones</h1>
+<div>
+    <table class="styled-table">
+      <thead>
+        <tr>
+            <th>Timestamp</th>
+          <th>enrolment_number</th>
+            <th>SET</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for index, row in data.iterrows %}
+        <tr><td>{{ row.Timestamp }}</td>
+         <td>{{ row.enrolment_number }}</td>
+          <td>{{ row.SET }}</td>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+<br>
+<div>
+    <h3>MATHS</h3>
+    <table class="styled-table">
+      <thead>
+        <tr><th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+            <th>Q5</th>
+            <th>Q6</th>
+            <th>Q7</th>
+            <th>Q8</th>
+            <th>Q9</th>
+            <th>Q10</th>
+            <th>Q11</th>
+            <th>Q12</th>
+            <th>Q13</th>
+            <th>Q14</th>
+            <th>Q15</th>
+            <th>Q16</th>
+            <th>Q17</th>
+            <th>Q18</th>
+            <th>Q19</th>
+            <th>Q20</th>
+            <th>Q21</th>
+            <th>Q22</th>
+            <th>Q23</th>
+            <th>Q24</th>
+            <th>Q25</th>
+            <th>Q26</th>
+            <th>Q27</th>
+            <th>Q28</th>
+            <th>Q29</th>
+            <th>Q30</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for index, row in data.iterrows %}
+        <tr> <td>{{ row.Q1 }}</td>
+            <td>{{ row.Q2 }}</td>
+            <td>{{ row.Q3 }}</td>
+            <td>{{ row.Q4 }}</td>
+            <td>{{ row.Q5 }}</td>
+            <td>{{ row.Q6 }}</td>
+            <td>{{ row.Q7 }}</td>
+            <td>{{ row.Q8 }}</td>
+            <td>{{ row.Q9 }}</td>
+            <td>{{ row.Q10 }}</td>
+            <td>{{ row.Q11 }}</td>
+            <td>{{ row.Q12 }}</td>
+            <td>{{ row.Q13}}</td>
+            <td>{{ row.Q14}}</td>
+            <td>{{ row.Q15 }}</td>
+            <td>{{ row.Q16 }}</td>
+            <td>{{ row.Q17 }}</td>
+            <td>{{ row.Q18}}</td>
+            <td>{{ row.Q19}}</td>
+            <td>{{ row.Q20 }}</td>
+            <td>{{ row.Q21 }}</td>
+            <td>{{ row.Q22 }}</td>
+            <td>{{ row.Q23}}</td>
+            <td>{{ row.Q24}}</td>
+            <td>{{ row.Q25 }}</td>
+            <td>{{ row.Q26 }}</td>
+            <td>{{ row.Q27 }}</td>
+            <td>{{ row.Q28}}</td>
+            <td>{{ row.Q29}}</td>
+            <td>{{ row.Q30 }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+    <br>
+<div>
+    <h3>PHYSICS</h3>
+    <table class="styled-table">
+      <thead>
+        <tr><th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+            <th>Q5</th>
+            <th>Q6</th>
+            <th>Q7</th>
+            <th>Q8</th>
+            <th>Q9</th>
+            <th>Q10</th>
+            <th>Q11</th>
+            <th>Q12</th>
+            <th>Q13</th>
+            <th>Q14</th>
+            <th>Q15</th>
+            <th>Q16</th>
+            <th>Q17</th>
+            <th>Q18</th>
+            <th>Q19</th>
+            <th>Q20</th>
+            <th>Q21</th>
+            <th>Q22</th>
+            <th>Q23</th>
+            <th>Q24</th>
+            <th>Q25</th>
+            <th>Q26</th>
+            <th>Q27</th>
+            <th>Q28</th>
+            <th>Q29</th>
+            <th>Q30</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for index, row in data.iterrows %}
+        <tr> <td>{{ row.Q31 }}</td>
+            <td>{{ row.Q32 }}</td>
+            <td>{{ row.Q33}}</td>
+            <td>{{ row.Q34}}</td>
+            <td>{{ row.Q35 }}</td>
+            <td>{{ row.Q36 }}</td>
+            <td>{{ row.Q37 }}</td>
+            <td>{{ row.Q38}}</td>
+            <td>{{ row.Q39}}</td>
+            <td>{{ row.Q40 }}</td>
+            <td>{{ row.Q41 }}</td>
+            <td>{{ row.Q42 }}</td>
+            <td>{{ row.Q43}}</td>
+            <td>{{ row.Q44}}</td>
+            <td>{{ row.Q45 }}</td>
+            <td>{{ row.Q46 }}</td>
+            <td>{{ row.Q47 }}</td>
+            <td>{{ row.Q48}}</td>
+            <td>{{ row.Q49}}</td>
+            <td>{{ row.Q50 }}</td>
+            <td>{{ row.Q51 }}</td>
+            <td>{{ row.Q52 }}</td>
+            <td>{{ row.Q53}}</td>
+            <td>{{ row.Q54}}</td>
+            <td>{{ row.Q55 }}</td>
+            <td>{{ row.Q56 }}</td>
+            <td>{{ row.Q57 }}</td>
+            <td>{{ row.Q58}}</td>
+            <td>{{ row.Q59}}</td>
+            <td>{{ row.Q60 }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+    <br>
+<div>
+    <h3>CHEMISTRY</h3>
+    <table class="styled-table">
+      <thead>
+        <tr><th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+            <th>Q5</th>
+            <th>Q6</th>
+            <th>Q7</th>
+            <th>Q8</th>
+            <th>Q9</th>
+            <th>Q10</th>
+            <th>Q11</th>
+            <th>Q12</th>
+            <th>Q13</th>
+            <th>Q14</th>
+            <th>Q15</th>
+            <th>Q16</th>
+            <th>Q17</th>
+            <th>Q18</th>
+            <th>Q19</th>
+            <th>Q20</th>
+            <th>Q21</th>
+            <th>Q22</th>
+            <th>Q23</th>
+            <th>Q24</th>
+            <th>Q25</th>
+            <th>Q26</th>
+            <th>Q27</th>
+            <th>Q28</th>
+            <th>Q29</th>
+            <th>Q30</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for index, row in data.iterrows %}
+        <tr> <td>{{ row.Q61}}</td>
+            <td>{{ row.Q62 }}</td>
+            <td>{{ row.Q63}}</td>
+            <td>{{ row.Q64}}</td>
+            <td>{{ row.Q65 }}</td>
+            <td>{{ row.Q66 }}</td>
+            <td>{{ row.Q67 }}</td>
+            <td>{{ row.Q68}}</td>
+            <td>{{ row.Q69}}</td>
+            <td>{{ row.Q70 }}</td>
+            <td>{{ row.Q71}}</td>
+            <td>{{ row.Q72 }}</td>
+            <td>{{ row.Q73}}</td>
+            <td>{{ row.Q74}}</td>
+            <td>{{ row.Q75 }}</td>
+            <td>{{ row.Q76 }}</td>
+            <td>{{ row.Q77 }}</td>
+            <td>{{ row.Q78}}</td>
+            <td>{{ row.Q79}}</td>
+            <td>{{ row.Q80 }}</td>
+            <td>{{ row.Q81}}</td>
+            <td>{{ row.Q82 }}</td>
+            <td>{{ row.Q83}}</td>
+            <td>{{ row.Q84}}</td>
+            <td>{{ row.Q85 }}</td>
+            <td>{{ row.Q86 }}</td>
+            <td>{{ row.Q87 }}</td>
+            <td>{{ row.Q88}}</td>
+            <td>{{ row.Q89}}</td>
+            <td>{{ row.Q90 }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+    <br>
+</body>
+    <h2><center><a href="{% url 'profile' %}"> click here for profile</a></center></h2>
+</html>
+{% endblock %}
+
+{#{% block content %}#}
+{#    <h1>student result and respones</h1>#}
+{#    {{ data|safe }}#}
+{#{% endblock %}#}

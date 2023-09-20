@@ -1,0 +1,48 @@
+{#<form method="post" action="{% url 'analyze_data' %}">#}
+{#  {% csrf_token %}#}
+{#  {{ form.as_p }}#}
+{#  <button type="submit">Analyze Data</button>#}
+{#</form>#}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> analyze form</title>
+<style>
+  div{
+  text-align: center;
+  padding:100px;
+  <!--box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); -->
+  }
+  .indiv1{
+  width:25%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left:200px;
+  }
+  .botton{
+   padding: 10px 22px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   border-radius:7px;
+   border:none;
+   background-color:gray;
+   color:white;
+
+   }
+</style>
+</head>
+<body>
+<div>
+<div class="indiv1">
+  <br>
+	<form method="post" action="{% url 'analyze_data' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+		<button class="botton" type="submit">Analyze Data</button>
+	</form>
+  </div>
+ </div>
+</body>
+</html>

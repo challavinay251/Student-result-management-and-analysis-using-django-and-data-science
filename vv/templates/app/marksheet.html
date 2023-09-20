@@ -1,0 +1,119 @@
+{#{% block content %}#}
+{#    <h1>student mark_sheet</h1>#}
+{#    {{ combined_data|safe }}#}
+{#{% endblock %}#}
+{#{% block content %}#}
+{#    <h1>student result and respones</h1>#}
+{#    <table>#}
+{#      <thead>#}
+{#        <tr>#}
+{#          <th>enrolment_number</th>#}
+{#            <th>Batch</th>#}
+{#          <th>Student_Name</th>#}
+{#            <th>RANK</th>#}
+{#            <th>MATHS</th>#}
+{#            <th>PHY</th>#}
+{#            <th>CHE</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#      {% for index, row in combined_data.iterrows %}#}
+{#        <tr>#}
+{#        <td>{{ row.enrolment_number }}</td>#}
+{#            <td>{{ row.Batch }}</td>#}
+{#             <td>{{ row.Student_Name }}</td>#}
+{#            <td>{{ row.RANK }}</td>#}
+{#            <td>{{ row.MATHS }}</td>#}
+{#            <td>{{ row.PHY }}</td>#}
+{#            <td>{{ row.CHE }}</td>#}
+{#               </tr>#}
+{##}
+{#      {% endfor %}#}
+{#      </tbody>#}
+{#    </table>#}
+{#{% endblock %}#}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Excel Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .error-message {
+            color: red;
+        }
+        a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 1px;
+  border-radius:7px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: gray;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    {% if matching_data_found %}
+        <table>
+            <thead>
+                <tr>
+                    <th>File ID</th>
+                    <th> DATE </th>
+                    <th>Enrolment Number</th>
+                    <th>pattern</th>
+                    <th>RANK</th>
+                    <th>MATHS</th>
+                    <th>PHY</th>
+                    <th>CHE</th>
+                    <!-- Add other columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in data_list %}
+                    {% for _, row in data.iterrows %}
+                        <tr>
+                            <td>{{ row.File_ID }}</td>
+                            <td>{{ row.Timestamp }}</td>
+                            <td>{{ row.enrolment_number }}</td>
+                            <td>JEEM</td>
+                            <td>{{ row.RANK }}</td>
+                            <td>{{ row.MATHS }}</td>
+                            <td>{{ row.PHY }}</td>
+                            <td>{{ row.CHE }}</td>
+                            <!-- Add other columns as needed -->
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {% if error_messages %}
+        <h2>ABSENT</h2>
+        <span><h3>NOTE: exam File_ID == exam number</h3></span>
+        <ul>
+            {% for error_message in error_messages %}
+                <li class="error-message">{{ error_message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<h2><center><a href="{% url 'profile' %}"> click here for profile</a></center></h2>
+</body>
+</html>

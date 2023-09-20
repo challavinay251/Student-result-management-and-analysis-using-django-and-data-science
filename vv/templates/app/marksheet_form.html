@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+                div{
+  text-align: center;
+  padding:100px;
+  <!--box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); -->
+  }
+  .indiv1{
+  width:25%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left:200px;
+  }
+  .botton{
+   padding: 10px 22px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   border-radius:7px;
+   border:none;
+   background-color:gray;
+   color:white;
+
+   }
+
+    </style>
+</head>
+<body>
+<div>
+<div class="indiv1">
+    <h1> view marksheet</h1>
+
+    <form method="post" action="{% url 'marksheet' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="botton" type="submit"> SUBMIT </button>
+    </form>
+</div>
+</div>
+</body>
+</html>

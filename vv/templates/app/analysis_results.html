@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <style>
+        a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 1px;
+  border-radius:7px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color: gray;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    {% if matching_files %}
+{#        <h3>Matching Files:</h3>#}
+{#        <ul>#}
+{#            {% for file in matching_files %}#}
+{#                <li>{{ file.id }}</li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+        <img src="/static/images1/chart.png" alt="Chart">
+        <span><h3>note:exam file id is exam number</h3></span>
+    {% endif %}
+<hr>
+    {% if non_matching_files %}
+        <h3><center>NOTE: absent in exam.</center></h3>
+        <ul>
+            {% for file in non_matching_files %}
+                <li>Absent exam File ID: {{ file.id }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<h2><center><a href="{% url 'profile' %}"> click here for profile</a></center></h2>
+</body>
+</html>
